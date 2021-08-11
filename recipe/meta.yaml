@@ -1,18 +1,18 @@
 {% set name = "pyfizi" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 26e15d2750eacf8aac72dbdcac9aeae175fd68a1bb20042da8d2caa999f46621
+  sha256: b3c878f4f47370cbb9e6b7719d86c5db58e4057a426e22a3232846948d9505f5
 
 build:
-  skip: True  # [win or py<37 or python_impl == "pypy"]
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  skip: true  # [win or py<37 or python_impl == "pypy"]
+  number: 0
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
